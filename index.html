@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calculator</title>
+  <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+
+  <style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+#calculator {
+  border-radius: 20px;
+  background-color: #333;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  padding: 20px;
+}
+
+#input {
+  width: calc(100% - 20px);
+  height: 60px;
+  border: none;
+  border-radius: 10px;
+  background-color: #000;
+  color: #fff;
+  font-size: 2em;
+  text-align: right;
+  padding-right: 10px;
+  margin-bottom: 20px;
+}
+
+#button-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.button {
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.5em;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:nth-child(4n+1) {
+  background-color: #505050;
+}
+
+.button:nth-child(4n+2),
+.button:nth-child(4n+3) {
+  background-color: #505050;
+}
+
+.button:nth-child(4n+4) {
+  background-color: #f39c12;
+}
+
+.button:nth-last-child(1) {
+  background-color: #e74c3c;
+  grid-row: span 2;
+}
+
+.button.zero {
+  grid-column: span 2;
+}
+
+.button:hover {
+  filter: brightness(1.2);
+}
+
+  </style>
+
+
+
+  <div id="calculator">
+    
+    <input  type="text" id="input" readonly>
+    
+    <br>
+
+    <hr>
+    
+    
+    <div id="button-container">
+
+
+      <button class="button" onclick="
+        currentdisplay = '';
+      document.querySelector('#input').value= currentdisplay;
+      ">AC</button>
+
+
+      <button class="button" onclick="
+      currentdisplay += '9';
+      document.querySelector('#input').value= currentdisplay;
+      ">9</button>
+
+
+      <button class="button" onclick="
+      currentdisplay += '8';
+      document.querySelector('#input').value= currentdisplay;
+      ">8</button>
+
+
+      <button class="button" onclick="
+      currentdisplay += '+';
+      document.querySelector('#input').value= currentdisplay;
+      ">+</button>
+
+
+      <button class="button" onclick="
+      currentdisplay += '7';
+      document.querySelector('#input').value= currentdisplay;
+      ">7</button>
+
+
+      <button class="button" onclick="
+      currentdisplay += '6';
+      document.querySelector('#input').value= currentdisplay;
+      ">6</button>
+      <button class="button" onclick="
+      currentdisplay += '-';
+      document.querySelector('#input').value= currentdisplay;
+      ">-</button>
+
+
+      <button class="button" onclick="
+      currentdisplay += '5';
+      document.querySelector('#input').value= currentdisplay;
+      ">5</button>
+
+
+      <button class="button" onclick="
+      currentdisplay += '4';
+      document.querySelector('#input').value= currentdisplay;
+      ">4</button>
+
+
+      <button class="button" onclick="
+      currentdisplay += '*';
+      document.querySelector('#input').value= currentdisplay;
+      ">*</button>
+
+
+      <button class="button" onclick="
+      currentdisplay += '3';
+      document.querySelector('#input').value= currentdisplay;
+      ">3</button>
+
+
+      <button class="button" onclick="
+      currentdisplay += '2';
+      document.querySelector('#input').value= currentdisplay;
+      ">2</button>
+
+
+      <button class="button" onclick="
+      currentdisplay += '/';
+      document.querySelector('#input').value= currentdisplay;
+      ">/</button>
+
+
+      <button class="button" onclick="
+      currentdisplay += '1';
+      document.querySelector('#input').value= currentdisplay;
+      ">1</button>
+
+
+      <button class="button" onclick="
+      currentdisplay += '0';
+      document.querySelector('#input').value= currentdisplay;
+      ">0</button>
+
+
+      <button class="button" onclick="
+      let result = eval(currentdisplay);
+      currentdisplay = result;
+      document.querySelector('#input').value = currentdisplay;
+      ">=</button>
+
+
+      <button class="button" onclick="
+      currentdisplay += '.';
+      document.querySelector('#input').value= currentdisplay;
+      ">.</button>
+
+
+    </div>
+    
+  </div>
+
+
+<script>
+  let currentdisplay = '';
+  document.querySelector('#input').value = currentdisplay;
+</script>
+</body>
+</html>
